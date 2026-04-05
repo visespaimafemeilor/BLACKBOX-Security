@@ -1,77 +1,115 @@
 :root {
-    --culoare-fundal: #f0f2f5;
-    --culoare-contur: #2c3e50; 
-    --culoare-accent: #e74c3c;
-    --margine-pagina: 120px;
+    /* --- CROMATICĂ HACKER / BATCOMPUTER --- */
+    --culoare-fundal: #000000;            /* Negru absolut */
+    --culoare-text: #00ff00;              /* Verde neon Matrix */
+    --culoare-contur: #004400;            /* Verde închis pentru granițe */
+    --culoare-accent: #ff0000;            /* Roșu pentru alerte/hover */
+    --culoare-neon: rgba(0, 255, 0, 0.7); /* Efect de strălucire verde */
+    
+    /* --- STRUCTURĂ (Păstrată din task-ul anterior) --- */
+    --spatiere-pagina: 120px;
+    --gap-celule: 15px; /* Comprimat un pic pentru un look mai tehnic */
+    --padding-comun: 20px;
 }
 
 body {
     background-color: var(--culoare-fundal);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--culoare-text);
+    /* Font Mono-spațiat, obligatoriu pentru look-ul de terminal */
+    font-family: 'Courier New', Courier, monospace; 
     margin: 0;
-    padding: 0;
-    line-height: 1.6;
+    padding-left: var(--spatiere-pagina);
+    padding-right: var(--spatiere-pagina);
+    line-height: 1.4;
+    transition: all 0.3s ease;
+    /* Efect de text scanline opțional (adaugă o textură discretă) */
+    background-image: linear-gradient(0deg, transparent 50%, rgba(0, 40, 0, 0.1) 50%);
+    background-size: 100% 4px;
 }
 
-main {
-    margin-left: var(--margine-pagina);
-    margin-right: var(--margine-pagina);
-    padding: 20px 0;
+/* --- IZOLARE VIZUALĂ: MODULELE BATCOMPUTER --- */
+header, footer, #grid-pagina > *, .container-iframe {
+    background-color: #050505; /* Un gri-negru foarte închis, ca să nu fie totul plat */
+    border: 1px solid var(--culoare-contur); /* Efect 1: Border subțire, industrial */
+    border-radius: 4px;                      /* Efect 2: Colțuri doar puțin rotunjite */
+    /* Efect 3: Box-shadow neon, creează strălucirea modulului */
+    box-shadow: 0 0 10px var(--culoare-neon), inset 0 0 5px rgba(0, 255, 0, 0.2); 
+    padding: var(--padding-comun);
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Adăugăm un efect de "scanline activ" pe fundalul modulelor */
+header::after, #grid-pagina > *::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(0,255,0,0) 0%, rgba(0,255,0,0.03) 50%, rgba(0,255,0,0) 100%);
+    animation: scanline 6s linear infinite;
+    pointer-events: none;
 }
 
 header {
-    background-color: var(--culoare-contur);
-    color: white;
-    padding: 20px;
+    background-color: #0a0a0a;
     text-align: center;
+    margin-top: 20px;
 }
 
+/* Efect neon pe titluri */
+h1, h2, h3 {
+    color: var(--culoare-text);
+    text-shadow: 0 0 5px var(--culoare-neon), 0 0 10px var(--culoare-neon);
+    text-transform: uppercase; /* Totul cu majuscule pentru un look militar/tehnic */
+    letter-spacing: 2px;
+}
+
+/* --- NAVIGARE: TERMINAL STYLE --- */
 nav ul {
     list-style: none;
     padding: 0;
     margin: 20px 0 0 0;
-    background: #34495e;
+    background: #0d0d0d;
+    border: 1px solid var(--culoare-contur);
+    border-radius: 4px;
 }
 
-nav ul li {
-    display: inline-block;
-    position: relative;
-}
+nav ul li { display: inline-block; position: relative; }
 
 nav ul li a {
-    color: white;
+    color: var(--culoare-text);
     text-decoration: none;
-    padding: 15px 25px;
+    padding: 10px 20px;
     display: block;
+    font-weight: bold;
+    transition: background 0.2s;
 }
 
+/* Hover roșu de alertă */
 nav ul li a:hover {
     background-color: var(--culoare-accent);
+    color: black;
+    text-shadow: none;
 }
 
+/* Submeniu stil terminal */
 nav ul li ul {
     display: none;
     position: absolute;
-    top: 100%;
-    left: 0;
-    width: 180px;
-    background-color: #34495e;
+    top: 100%; left: 0;
+    width: 200px;
+    background-color: #0d0d0d;
+    border: 1px solid var(--culoare-contur);
     z-index: 100;
-    text-align: left;
 }
 
-nav ul li ul li {
-    display: block;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-}
+nav ul li ul li { display: block; border-bottom: 1px solid var(--culoare-contur); }
+nav ul li:hover ul { display: block; }
 
-nav ul li:hover ul {
-    display: block;
-}
-
+/* --- GRID LAYOUT (Păstrat, dar cu gap-ul nou) --- */
 #grid-pagina {
     display: grid;
-    gap: 15px;
+    gap: var(--gap-celule);
     grid-template-columns: 2fr 1fr 3fr;
     grid-template-areas: 
         "welcome welcome welcome"
@@ -81,15 +119,10 @@ nav ul li:hover ul {
         "fig3 orar orar"
         "produse produse produse"
         "index-intrebari index-intrebari index-intrebari";
+    margin: 20px 0;
 }
 
-#grid-pagina > * {
-    border: 1px solid var(--culoare-contur);
-    padding: 15px;
-    background: white;
-    border-radius: 4px;
-}
-
+/* Atribuirea zonelor gridului (din codul tău original) */
 #welcome { grid-area: welcome; }
 #promotii { grid-area: promotii; }
 #anunturi { grid-area: anunturi; }
@@ -100,70 +133,76 @@ nav ul li:hover ul {
 #produse { grid-area: produse; }
 #index-intrebari { grid-area: index-intrebari; }
 
+/* --- TABEL: MONITORIZARE DATE --- */
 #tab-orar {
     width: 100%;
     border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 0.9em;
 }
 
 #tab-orar th, #tab-orar td {
-    border: 1px solid #ddd;
+    border: 1px solid var(--culoare-contur);
     padding: 8px;
     text-align: center;
 }
 
 #tab-orar thead {
     background-color: var(--culoare-contur);
-    color: white;
+    color: black; /* Text negru pe fundal verde închis pentru header */
 }
 
-#tab-orar tfoot {
-    font-style: italic;
-    font-size: 0.9em;
-    background: #f9f9f9;
-}
+/* Rânduri alternate discrete */
+#tab-orar tbody tr:nth-child(even) { background-color: rgba(0, 255, 0, 0.03); }
+#tab-orar tbody tr:hover { background-color: rgba(0, 255, 0, 0.1); } /* Hover discret */
 
-figure img {
-    max-width: 100%;
+#tab-orar tfoot { font-style: italic; color: #00aa00; }
+
+/* --- ELEMENTE MEDIA RESPONSIVE --- */
+figure img, video, iframe {
+    width: 90%;
+    max-width: 800px;
+    min-width: 150px;
     height: auto;
-    border-radius: 4px;
+    display: block;
+    margin: 15px auto;
+    border: 1px solid var(--culoare-accent); /* Contur roșu pentru media, ca o țintă */
+    border-radius: 2px;
+    filter: sepia(1) hue-rotate(70deg) saturate(3); /* Forțează media să aibă o nuanță verde */
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
 }
 
-figcaption {
-    text-align: center;
-    font-weight: bold;
-    font-size: 0.9em;
-    margin-top: 5px;
-}
-
-video, iframe {
-    max-width: 100%;
-    border-radius: 5px;
-}
-
-.container-iframe {
-    text-align: center;
-    background: #fff;
-    padding: 20px;
-    border: 1px solid var(--culoare-contur);
-    margin-top: 20px;
-}
-
+/* --- FOOTER: SYSTEM INFO --- */
 footer {
-    background-color: var(--culoare-contur);
-    color: white;
-    padding: 30px;
-    margin-top: 40px;
+    background-color: #0a0a0a;
     text-align: center;
+    margin-top: 40px;
+    color: #00aa00; /* Verde mai stins */
 }
 
-footer address a {
-    color: #3498db;
-    text-decoration: none;
+footer address a { color: var(--culoare-text); text-decoration: underline; }
+footer address a:hover { color: var(--culoare-accent); }
+
+/* --- ANIMATIONS --- */
+@keyframes scanline {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
 }
 
+/* Efect de pâlpâire text (opțional, aplicat pe subtitlu) */
+header p i.fa-spin {
+    animation: flicker 2s infinite;
+}
+
+@keyframes flicker {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+/* --- MEDIA QUERIES (Păstrate și actualizate) --- */
 @media screen and (max-width: 1200px) {
-    body { --margine-pagina: 80px; }
-    
+    :root { --spatiere-pagina: 60px; --gap-celule: 10px; }
     #grid-pagina {
         grid-template-columns: 1fr 1fr;
         grid-template-areas: 
@@ -178,14 +217,10 @@ footer address a {
 }
 
 @media screen and (max-width: 700px) {
-    body { --margine-pagina: 20px; }
-    
-    #grid-pagina {
-        display: flex;
-        flex-direction: column;
-    }
-    
-    header h1 { font-size: 1.5em; }
-    nav ul li { display: block; }
+    :root { --spatiere-pagina: 10px; --gap-celule: 5px; }
+    #grid-pagina { display: flex; flex-direction: column; }
+    header h1 { font-size: 1.2em; }
+    nav ul li { display: block; border-bottom: 1px solid var(--culoare-contur); }
     nav ul li ul { position: static; width: 100%; }
+    figure img, video, iframe { width: 100%; filter: none; border-color: var(--culoare-contur); }
 }
