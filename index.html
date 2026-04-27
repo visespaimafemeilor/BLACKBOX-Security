@@ -8,7 +8,7 @@
     <meta name="author" content="Visenica Andreea-Laura">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="BLACKBOX este un magazin de hardware pentru securitate, oferind camere de supraveghere și sisteme de alarmă profesionale.">
-    <meta name="keywords" content="Blackbox, magazin, hardware, securitate, camere de supraveghere, sisteme de alarma, control acces, interfoane video, echipamente de retea, stocare date, accesorii pentru securitate">
+    <meta name="keywords" content="Blackbox, magazin, hardware, securitate, camere de supraveghere, sisteme de alarma, control acces, interfoane video, echipamente de retea, stocare date, accesorii pentru securitate, NVR, DVR, IP camera, sistem supraveghere, kit securitate">
     
     <link rel="apple-touch-icon" sizes="180x180" href="./resurse/imagini/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="96x96" href="./resurse/imagini/favicon/favicon-96x96.png">
@@ -17,6 +17,12 @@
     <meta name="msapplication-TileColor" content="#000000">
     <meta name="theme-color" content="#ffffff">
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="./resurse/css/reset.css">
     <link rel="stylesheet" href="./resurse/css/general.css">
 </head>
 <body>
@@ -26,10 +32,10 @@
             <ul>
                 <li><a href="index.html">Acasă</a>
                     <ul> 
-                        <li><a href="#welcome">Prezentare</a></li>
-                        <li><a href="#promotii">Oferte</a></li>
-                        <li><a href="#orar">Program Lucru</a></li>
-                        <li><a href="#anunturi">Evenimente</a></li>
+                        <li><a href="#zona1-prezentare">Prezentare</a></li>
+                        <li><a href="#zona2-tabel">Program Lucru</a></li>
+                        <li><a href="#zona8-diverse">Oferte</a></li>
+                        <li><a href="#zona3-calendar">Evenimente</a></li>
                     </ul>
                 </li>
                 <li><a href="produse.html">Produse</a></li>
@@ -39,20 +45,19 @@
         </nav>
     </header>
 
-    <main>
-        <section id="welcome">
+    <main id="grid-pagina">
+        <section id="zona1-prezentare">
+            <span class="icon-static"><i class="fa-solid fa-shield-halved"></i></span>
             <hgroup>
                 <h2>Prezentare Sisteme Profesionale</h2>
                 <p>Soluții inteligente pentru liniștea ta și a familiei tale</p>
             </hgroup>
             
-            <p>Bine ați venit la <b>BLACKBOX</b>. Într-o lume digitalizată, <b>monitorizare video</b> nu mai este opțională. <dfn>Securitatea</dfn> este procesul de protejare a bunurilor prin tehnologie.</p>
+            <p>Bine ați venit la <b>BLACKBOX</b>. Într-o lume digitalizată, <b>monitorizare video</b> nu mai este opțională. <dfn>Securitatea</dfn> este procesul de protejare a bunurilor prin tehnologie. Oferim soluții <abbr title="Internet Protocol">IP</abbr> și sisteme <abbr title="Network Video Recorder">NVR</abbr> de calitate.</p>
             
             <blockquote cite="https://ro.wikipedia.org/wiki/Securitate">
                 "Securitatea fizică reprezintă prima barieră în protecția oricărei infrastructuri critice."
             </blockquote>
-
-            <p><strong>Atenție!</strong> Instalăm sisteme de <b>tehnologie protecție</b> atât la domiciliu, cât și la sedii comerciale.</p>
 
             <figure id="fig-principala">
                 <picture>
@@ -64,115 +69,77 @@
             </figure>
         </section>
 
-        <section id="promotii">
-            <h2>Promoții și Oferte</h2>
-            <article>
-                <h3>Kit Supraveghere Weekend</h3>
-                <p><b>BLACKBOX</b> oferă reduceri de <s>10%</s> <ins>20%</ins> pentru sistemele 4K cumpărate sâmbăta.</p>
-                
-                <p>Stoc campanie (Critic): 
-                    <meter value="15" min="0" max="100" low="30" high="80" optimum="90"></meter> 
-                    <span>15% rămas - Stoc scăzut!</span>
-                </p>
-            </article>
-
-            <article>
-                <h3>Satisfacție Clienți</h3>
-                <p>Rata de feedback pozitiv: 
-                    <meter value="95" min="0" max="100" low="30" high="80" optimum="95"></meter> 
-                    <span>95% - Excelent!</span>
-                </p>
-            </article>
-        </section>
-
-        <section id="categorii">
-            <h2>Categorii Hardware</h2>
-            <section>
-                <h3>Echipamente Camere Supraveghere</h3>
-                <p>Vă oferim soluții prin care să câștigați siguranță, nu <em>doar</em> echipamente.</p>
-                <dl>
-                    <dt>IP Camera</dt>
-                    <dd>Cameră digitală ce transmite date prin rețea.</dd>
-                    <dt>NVR</dt>
-                    <dd>Dispozitiv pentru stocarea înregistrărilor video.</dd>
-                </dl>
-            </section>
-            
-            <aside>
-                <h3>Informații Suplimentare</h3>
-                <p>Toate produsele noastre includ consultanță gratuită pentru configurarea inițială.</p>
-            </aside>
-        </section>
-
-        <section id="harta-interactiva">
-            <h2>Explorați Echipamentele Noastre</h2>
-            <p>Dați click pe componentele kitului de mai jos pentru a afla detalii despre fiecare:</p>
-            <img src="./resurse/imagini/kit-securitate.jpg" usemap="#mapa-kit" alt="Kit de supraveghere complet" style="max-width: 100%; height: auto;">
-            <map name="mapa-kit">
-                <area shape="rect" coords="34,44,270,350" href="produse.html#camere" alt="Detalii Camere" title="Vezi gama de camere">                
-                <area shape="circle" coords="450,200,100" href="produse.html#stocare" alt="Detalii NVR" title="Sisteme de stocare">
-                <area shape="poly" coords="290,380,350,330,450,330,510,380,450,430,350,430" href="produse.html#accesorii" alt="Accesorii" title="Cabluri și conectică">
-            </map>
-        </section>
-
-        <section id="orar">
+        <section id="zona2-tabel">
             <h2>Orar și Disponibilitate Servicii</h2>
-            <table>
-                <caption>Programul de lucru și disponibilitatea echipei tehnice 2026</caption>
-                <thead>
-                    <tr>
-                        <th>Regim Zi</th>
-                        <th>Interval Orar</th>
-                        <th>Suport Tehnic</th>
-                        <th>Intervenții Teren</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Luni</td>
-                        <td>08:00 - 20:00</td>
-                        <td>Disponibil</td>
-                        <td>10:00 - 18:00</td>
-                    </tr>
-                    <tr>
-                        <td>Marți</td>
-                        <td>08:00 - 20:00</td>
-                        <td>Disponibil</td>
-                        <td>10:00 - 18:00</td>
-                    </tr>
-                    <tr>
-                        <td>Miercuri</td>
-                        <td>08:00 - 20:00</td>
-                        <td>Disponibil</td>
-                        <td>10:00 - 18:00</td>
-                    </tr>
-                    <tr>
-                        <td>Joi</td>
-                        <td>08:00 - 20:00</td>
-                        <td>Disponibil</td>
-                        <td>10:00 - 18:00</td>
-                    </tr>
-                    <tr>
-                        <td>Vineri</td>
-                        <td>08:00 - 18:00</td>
-                        <td>Disponibil</td>
-                        <td>10:00 - 16:00</td>
-                    </tr>
-                    <tr>
-                        <td>Sâmbătă</td>
-                        <td>10:00 - 14:00</td>
-                        <td colspan="2">Doar urgențe majore (Remote)</td> </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td colspan="4"><b>Notă:</b> Pentru intervenții în afara programului, apelați linia de urgență 24/7.</td>
-                    </tr>
-                </tfoot>
-            </table>
+            <div class="tabel-container">
+                <table>
+                    <caption>Programul de lucru și disponibilitatea echipei tehnice 2026</caption>
+                    <thead>
+                        <tr>
+                            <th>Regim Zi</th>
+                            <th>Interval Orar</th>
+                            <th>Suport Tehnic</th>
+                            <th>Intervenții Teren</th>
+                            <th>Stare</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Luni</td>
+                            <td>08:00 - 20:00</td>
+                            <td>Disponibil</td>
+                            <td>10:00 - 18:00</td>
+                            <td rowspan="2">Activ</td>
+                        </tr>
+                        <tr>
+                            <td>Marți</td>
+                            <td>08:00 - 20:00</td>
+                            <td>Disponibil</td>
+                            <td>10:00 - 18:00</td>
+                        </tr>
+                        <tr>
+                            <td>Miercuri</td>
+                            <td>08:00 - 20:00</td>
+                            <td>Disponibil</td>
+                            <td>10:00 - 18:00</td>
+                            <td>Activ</td>
+                        </tr>
+                        <tr>
+                            <td>Joi</td>
+                            <td>08:00 - 20:00</td>
+                            <td>Disponibil</td>
+                            <td>10:00 - 18:00</td>
+                            <td>Activ</td>
+                        </tr>
+                        <tr>
+                            <td>Vineri</td>
+                            <td>08:00 - 18:00</td>
+                            <td>Disponibil</td>
+                            <td>10:00 - 16:00</td>
+                            <td>Activ</td>
+                        </tr>
+                        <tr>
+                            <td>Sâmbătă</td>
+                            <td>10:00 - 14:00</td>
+                            <td colspan="2">Doar urgențe majore (Remote)</td>
+                            <td>Limitat</td>
+                        </tr>
+                        <tr>
+                            <td>Duminică</td>
+                    <td colspan="4">Închis</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="5"><b>Notă:</b> Pentru intervenții în afara programului, apelați linia de urgență 24/7.</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
         </section>
 
-        <section id="anunturi">
-            <h2>Evenimente și Anunțuri</h2>
+        <section id="zona3-calendar">
+            <h2>Calendar Evenimente</h2>
             <ol>
                 <li>
                     <time datetime="2026-04-10T10:00">10 aprilie, ora 10:00</time> - 
@@ -189,37 +156,11 @@
             </ol>
         </section>
 
-        <section id="tutoriale">
-            <h2>Ghiduri Video Profesionale (Ediția 2025)</h2>
-            <div id="video-links">
-                <a href="https://www.youtube.com/embed/DCTPLS0O7XQ" target="ifr-video">Instalare Sistem 6 Camere IP & NVR</a> |  
-                <a href="https://www.youtube.com/embed/RCvv9LzS79E" target="ifr-video">Configurare DVR/NVR Hikvision pe Mobil</a> |
-                <a href="https://www.youtube.com/embed/hXHNBWH64OY" target="ifr-video">Instalare Alarmă Wireless Ajax</a> |
-                <a href="https://www.youtube.com/embed/plFca0UxWuM" target="ifr-video">Configurare Cameră Wi-Fi Rotativă</a>
-            </div>
-            <iframe name="ifr-video" width="560" height="315" src="https://www.youtube.com/embed/DCTPLS0O7XQ" title="YouTube security tutorials" allowfullscreen></iframe>
-        </section>
-
-        <section id="resurse-extra">
-            <h2>Link-uri utile</h2>
-            <ul>
-                <li>Extern (Tab nou): <a href="https://www.hikvision.com" target="_blank">Partener Oficial Hikvision</a></li>
-                <li>Resursă externă lungă: <a href="https://www.security-standards-example.org/docs/implementation-guide-2026">https://www.security-standards-example.org/<wbr>docs/<wbr>implementation-guide-2026</a></li>
-                <li>Download (redenumit): <a href="resurse/manual.pdf" download="Ghid_Complet_Securitate.pdf">Descarcă Manualul PDF</a></li>
-                <li>Imagine cu link: 
-                    <a href="resurse/imagini/camera-mare.jpg">
-                        <img src="resurse/imagini/camera-mic.jpg" alt="Miniatură cameră" style="width:50px">
-                    </a>
-                </li>
-            </ul>
-        </section>
-
-        <section id="faq">
-            <h2>Întrebări Frecvente și Detalii Tehnice</h2>
-            
+        <section id="zona4-anunturi">
+            <h2>Anunțuri</h2>
             <details>
                 <summary>Sunt sistemele rezistente la apă?</summary>
-                <p>Toate camerele de exterior sunt certificate <i lang="en">weatherproof</i> IP67. Acest lucru înseamnă că sunt protejate complet împotriva prafului și pot rezista la scufundări temporare în apă.</p>
+                <p>Toate camerele de exterior sunt certificate <i>weatherproof</i> IP67. Acest lucru înseamnă că sunt protejate complet împotriva prafului și pot rezista la scufundări temporare în apă.</p>
             </details>
 
             <details>
@@ -231,15 +172,126 @@
                 <summary>Pot vedea imaginile de pe telefon dacă nu sunt acasă?</summary>
                 <p>Da, toate sistemele <b>BLACKBOX</b> vin cu acces Cloud gratuit. Trebuie doar să instalați aplicația dedicată și să scanați codul QR de pe unitatea centrală (NVR/DVR).</p>
             </details>
+        </section>
 
-            <details>
-                <summary>Asigurați și montajul echipamentelor?</summary>
-                <p>Echipa noastră oferă servicii de instalare autorizată în București și Ilfov. Pentru restul țării, oferim consultanță video gratuită pentru auto-instalare.</p>
-            </details>
+        <section id="zona5-utilizatori">
+            <h2>Utilizatori Online</h2>
+            <div class="placeholder">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</div>
+        </section>
+
+        <section id="zona6-utilizator-date">
+            <h2>Date Utilizator și Statistici</h2>
+            <div class="placeholder">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</div>
+        </section>
+
+        <section id="zona7-server">
+            <h2>Date Site și Server</h2>
+            <div class="placeholder">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pariatur. Excepteur sint occaecat cupidatat non proident.</div>
+        </section>
+
+        <section id="zona8-diverse">
+            <h2>Informații Suplimentare</h2>
+            <p>BLACKBOX oferă sisteme de securitate hardware profesionale pentru locuințe și sedii comerciale. Oferim <b>camere de supraveghere</b>, <b>sisteme de alarmă</b>, <b>control acces</b> și <b>interfoane video</b>.</p>
+            
+            <div class="formula-container">
+                <h3>Formula de stocare video</h3>
+                <math>
+                    <mi class="math-var">S</mi>
+                    <mo>=</mo>
+                    <mi class="math-const">R</mi>
+                    <mo>×</mo>
+                    <mi class="math-var">T</mi>
+                    <mo>×</mo>
+                    <mi class="math-sub">C</mi>
+                    <mo>×</mo>
+                    <mi class="math-const">3600</mi>
+                    <mo>÷</mo>
+                    <mi class="math-const">8</mi>
+                    <mo>÷</mo>
+                    <mi class="math-const">1000</mi>
+                    <mo>×</mo>
+                    <mi class="math-sub">D</mi>
+                </math>
+                <p class="formula-desc">
+                    <span class="formula-variable">S</span> = Stocare (GB) | 
+                    <span class="formula-variable">R</span> = Rezoluție (1/2/4 MP) | 
+                    <span class="formula-variable">T</span> = FPS | 
+                    <span class="formula-variable">C</span> = Camere | 
+                    <span class="formula-variable">D</span> = Zile
+                </p>
+            </div>
+            
+            <div class="resurse-links">
+                <h3>Link-uri utile</h3>
+                <ul>
+                    <li>Partener oficial: <a href="https://www.hikvision.com/ro_ro" target="_blank">Hikvision România</a></li>
+                    <li>Documentație tehnică: <a href="https://www.security-standards-example.org/docs/implementation-guide-2026#chapter5">https://www.security-standards-example.org/<wbr>docs/<wbr>implementation-guide-2026#chapter5</a></li>
+                    <li>Descarcă manual: <a href="resurse/manual.pdf" download="Ghid_Complet_Securitate.pdf">Descarcă PDF</a></li>
+                    <li>Galerie imagini: 
+                        <a href="resurse/imagini/camera-mare.jpg">
+                            <img src="resurse/imagini/camera-mic.jpg" alt="Cameră" style="width: 3rem;">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="video-links">
+                <a href="https://www.youtube.com/embed/DCTPLS0O7XQ" target="ifr-video">Instalare Sistem 6 Camere IP & NVR</a> |  
+                <a href="https://www.youtube.com/embed/RCvv9LzS79E" target="ifr-video">Configurare DVR/NVR Hikvision pe Mobil</a> |
+                <a href="https://www.youtube.com/embed/hXHNBWH64OY" target="ifr-video">Instalare Alarmă Wireless Ajax</a>
+            </div>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/ReYWBlAcCH0" name="ifr-video" title="YouTube security tutorials" allowfullscreen></iframe>
+            </div>
+            
+            <section id="promotii">
+                <h3>Promoții și Oferte</h3>
+                <article>
+                    <h4>Kit Supraveghere Weekend</h4>
+                    <p><b>BLACKBOX</b> oferă reduceri de <s>10%</s> <ins>20%</ins> pentru sistemele 4K cumpărate sâmbăta.</p>
+                    
+                    <p>Stoc campanie (Critic): 
+                        <meter value="15" min="0" max="100" low="30" high="80" optimum="90"></meter> 
+                        <span>15% rămas - Stoc scăzut!</span>
+                    </p>
+                </article>
+
+                <article>
+                    <h4>Satisfacție Clienți</h4>
+                    <p>Rata de feedback pozitiv: 
+                        <meter value="95" min="0" max="100" low="30" high="80" optimum="95"></meter> 
+                        <span>95% - Excelent!</span>
+                    </p>
+                </article>
+            </section>
+
+            <section id="categorii">
+                <h3>Categorii Hardware</h3>
+                <section>
+                    <h4>Echipamente Camere Supraveghere</h4>
+                    <p>Vă oferim soluții prin care să câștigați siguranță, nu <em>doar</em> echipamente. Sistemele noastre includ <b>camere IP</b>, <b>DVR</b> și <b>NVR</b> de top.</p>
+                    <dl>
+                        <dt>IP Camera</dt>
+                        <dd>Cameră digitală ce transmite date prin rețea.</dd>
+                        <dt>NVR</dt>
+                        <dd>Dispozitiv pentru stocarea înregistrărilor video.</dd>
+                        <dt>Sistem Alarmă</dt>
+                        <dd>Sistem de securitate pentru locuințe și birouri.</dd>
+                        <dt>Interfon Video</dt>
+                        <dd>Control acces cu video și audio.</dd>
+                    </dl>
+                </section>
+                
+                <aside>
+                    <h4>Informații Suplimentare</h4>
+                    <p>Toate produsele noastre includ consultanță gratuită pentru configurarea inițială. Oferim <b>montaj</b> și <b>service</b> profesionist.</p>
+                </aside>
+            </section>
         </section>
     </main>
 
     <footer>
+        <span class="icon-animat"><i class="fa-solid fa-circle-notch fa-spin"></i></span>
         <address>
             <strong>Contact BLACKBOX</strong><br>
             Email: <a href="mailto:office@blackbox-security.ro">office@blackbox-security.ro</a><br>
@@ -247,7 +299,7 @@
             Locație: <a href="https://goo.gl/maps/N9S2pX68A6H2" target="_blank">Str. Academiei 14,<br>București, România</a><br>
             Chat: <a href="https://wa.me/40722000000">WhatsApp Direct</a>
         </address>
-        <a href="#top">Înapoi la începutul paginii</a>
+        <a href="#top" class="back-to-top"><span class="sageata">&#8593;</span><span class="tooltip">Înapoi la începutul paginii</span></a>
         <p>
             <small>Copyright &copy; 2026 BLACKBOX Security. Creat la <time datetime="2026-03-15">15 martie 2026</time></small>
         </p>
