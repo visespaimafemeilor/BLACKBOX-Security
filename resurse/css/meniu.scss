@@ -1,0 +1,221 @@
+// Variabile SASS pentru timpi de tranziție
+$transition-fast: 0.3s ease;
+$transition-medium: 0.4s ease;
+
+// Placeholder @extend: stil de bază pentru linkuri
+%link-base {
+    color: var(--nav-text);
+    text-decoration: none;
+    display: block;
+    font-weight: bold;
+}
+
+// Placeholder @extend: stil element submeniu
+%submenu-item {
+    border-bottom: 1px solid var(--nav-border);
+}
+
+// Stil principal meniu navigare
+nav {
+    // Variabile locale CSS pentru tema meniului
+    --nav-bg: #0d0d0d;
+    --nav-border: var(--culoare-contur);
+    --nav-text: var(--culoare-text);
+    --nav-hover-bg: var(--culoare-accent);
+    --nav-hover-text: var(--culoare-fundal);
+    --nav-sub-bg: #0f0f1e;
+    --nav-shadow: rgba(80, 241, 250, 0.3);
+    --icon-only-size: 1.25rem;
+
+    background: var(--nav-bg);
+    border: 1px solid var(--nav-border);
+    border-radius: 0.25rem;
+    margin: 1.25rem 0 0 0;
+
+    // Listă principală orizontală
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+
+        // Elemente listă
+        li {
+            position: relative;
+
+            // Linkuri meniu
+            a {
+                @extend %link-base;
+                padding: 0.75rem 1.25rem;
+                position: relative;
+                z-index: 1;
+                white-space: nowrap;
+                transition: color $transition-fast;
+
+                // ::before pentru efect hover (scale de la 0 la 100%)
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: var(--nav-hover-bg);
+                    border-radius: 0.25rem;
+                    transform: scaleX(0) scaleY(0);
+                    transition: transform $transition-medium;
+                    z-index: -1;
+                }
+
+                // Iconițe Font Awesome
+                i {
+                    margin-right: 0.5rem;
+                }
+
+                // Hover: link și efect ::before
+                &:hover {
+                    color: var(--nav-hover-text);
+
+                    &::before {
+                        transform: scaleX(1) scaleY(1);
+                    }
+                }
+            }
+
+            // Submeniu ascuns, apare la hover cu scalare din colț stânga sus
+            ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                min-width: 14rem;
+                background: var(--nav-sub-bg);
+                border: 1px solid var(--nav-border);
+                z-index: 100;
+                flex-direction: column;
+                transform-origin: top left;
+                transform: scale(0);
+                transition: transform $transition-fast;
+
+                li {
+                    @extend %submenu-item;
+
+                    a {
+                        padding: 0.625rem 1.25rem;
+
+                        // Hover submeniu: bg + text-shadow
+                        &:hover {
+                            background: var(--nav-hover-bg);
+                            color: var(--nav-hover-text);
+                            text-shadow:
+                                1px 1px 2px rgba(0, 0, 0, 0.5),
+                                -1px -1px 2px rgba(0, 0, 0, 0.5),
+                                1px -1px 2px rgba(0, 0, 0, 0.5),
+                                -1px 1px 2px rgba(0, 0, 0, 0.5);
+                        }
+                    }
+                }
+            }
+
+            // Hover pe element principal → deschide submeniu
+            &:hover ul {
+                display: flex;
+                transform: scale(1);
+            }
+        }
+    }
+}
+
+// Checkbox ascuns pentru hamburger menu
+#hamburger-checkbox {
+    display: none;
+}
+
+// Label pentru hamburger (vizibil doar pe mobil)
+.hamburger-label {
+    display: none;
+    cursor: pointer;
+    padding: 0.75rem;
+    color: var(--nav-text);
+    font-size: 1.5rem;
+    user-select: none;
+}
+
+// @for loop pentru clase iconițe meniu
+@for $i from 1 through 3 {
+    .menu-icon-#{$i} {
+        font-size: 1.2rem;
+    }
+}
+
+// Ecran mediu: doar iconițe vizibile, text ascuns
+@media screen and (max-width: 1200px) {
+    nav ul li a {
+        font-size: 0;
+        padding: 0.75rem 1rem;
+
+        i {
+            font-size: var(--icon-only-size);
+            margin-right: 0;
+        }
+    }
+
+    nav ul li ul li a {
+        font-size: 0.85rem;
+
+        i {
+            font-size: 0.85rem;
+            margin-right: 0.5rem;
+        }
+    }
+}
+
+// Ecran mic: hamburger menu + submeniu cu clip-path
+@media screen and (max-width: 700px) {
+    .hamburger-label {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+
+        li {
+            display: block;
+            border-bottom: 1px solid var(--nav-border);
+
+            a {
+                font-size: 1rem;
+                padding: 0.75rem 1.25rem;
+
+                i {
+                    font-size: 1rem;
+                    margin-right: 0.5rem;
+                }
+            }
+
+            // Submeniu pe mobil: static, clip-path polygon pentru efect săgeată
+            ul {
+                position: static;
+                min-width: 100%;
+                transform: none;
+                display: flex;
+                flex-direction: column;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height $transition-fast;
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+
+            &:hover ul {
+                max-height: 20rem;
+            }
+        }
+    }
+
+    // Activare meniu hamburger prin checkbox
+    #hamburger-checkbox:checked ~ nav ul {
+        display: flex;
+    }
+}

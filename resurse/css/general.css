@@ -1,5 +1,5 @@
+/* Variabile CSS globale - schema cromatică neon cyan/violet */
 :root {
-    /* Schema cromatică - Cyan/Violet/Blue neon cyber */
     --culoare-fundal: #0a0a14;
     --culoare-fundal-zone: #0f0f1e;
     --culoare-fundal-grid: #141428;
@@ -14,14 +14,15 @@
     --spatiere-pagina: 5rem;
     --gap-celule: 0.9375rem;
     --padding-comun: 1.25rem;
-    
     --font-size-base: 1rem;
 }
 
+/* Setare dimensiune font de bază */
 html {
     font-size: 100%;
 }
 
+/* Stil body: fundal închis, font tech, padding lateral pentru aerisire */
 body {
     background-color: var(--culoare-fundal);
     color: var(--culoare-text);
@@ -35,6 +36,7 @@ body {
     overflow-x: hidden;
 }
 
+/* Header și footer: efect neon, border, colțuri rotunjite */
 header, footer {
     background-color: var(--culoare-fundal-zone);
     border: 1px solid var(--culoare-contur);
@@ -43,9 +45,9 @@ header, footer {
     padding: var(--padding-comun);
     margin-bottom: 0.625rem;
     position: relative;
-    overflow: hidden;
 }
 
+/* Efect scanline pe header/footer */
 header::after, footer::after {
     content: "";
     position: absolute;
@@ -54,12 +56,14 @@ header::after, footer::after {
     pointer-events: none;
 }
 
+/* Header centrat */
 header {
     background-color: var(--culoare-fundal-zone);
     text-align: center;
     margin-top: 1.25rem;
 }
 
+/* Headinguri: neon glow, uppercase */
 h1, h2, h3, h4 {
     color: var(--culoare-text);
     text-shadow: 0 0 5px var(--culoare-neon), 0 0 10px var(--culoare-neon);
@@ -68,65 +72,18 @@ h1, h2, h3, h4 {
     margin: 0.5em 0;
 }
 
-strong {
-    font-weight: 700;
-}
+/* Reset stiluri inline bold/italic */
+strong { font-weight: 700; }
+em { font-style: italic; }
+b { font-weight: 700; }
+i { font-style: italic; }
 
-em {
-    font-style: italic;
-}
-
-b {
-    font-weight: 700;
-}
-
-i {
-    font-style: italic;
-}
-
+/* Dimensiune text relativă */
 p, li, td, th, dd, dt {
     font-size: 1em;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 1.25rem 0 0 0;
-    background: var(--culoare-fundal);
-    border: 1px solid var(--culoare-contur);
-    border-radius: 0.25rem;
-}
-
-nav ul li { display: inline-block; position: relative; }
-
-nav ul li a {
-    color: var(--culoare-text);
-    text-decoration: none;
-    padding: 0.625rem 1.25rem;
-    display: block;
-    font-weight: bold;
-    transition: background 0.3s ease;
-}
-
-nav ul li a:hover {
-    background-color: var(--culoare-accent);
-    color: var(--culoare-fundal);
-    text-shadow: none;
-}
-
-nav ul li ul {
-    display: none;
-    position: absolute;
-    top: 100%; left: 0;
-    width: 12.5rem;
-    background-color: var(--culoare-fundal);
-    border: 1px solid var(--culoare-contur);
-    z-index: 100;
-}
-
-nav ul li ul li { display: block; border-bottom: 1px solid var(--culoare-contur); }
-nav ul li:hover ul { display: block; }
-
+/* Grid principal cu template-areas pentru layout responsive */
 #grid-pagina {
     display: grid;
     gap: var(--gap-celule);
@@ -141,9 +98,7 @@ nav ul li:hover ul { display: block; }
     margin: 1.25rem 0;
 }
 
-#zona3-calendar { grid-area: zona3; }
-#zona4-anunturi { grid-area: zona4; }
-
+/* Asignare zone grid */
 #zona1-prezentare { grid-area: zona1; }
 #zona2-tabel { grid-area: zona2; }
 #zona3-calendar { grid-area: zona3; }
@@ -151,10 +106,247 @@ nav ul li:hover ul { display: block; }
 #zona5-utilizatori { grid-area: zona5; }
 #zona6-utilizator-date { grid-area: zona6; }
 #zona7-server { grid-area: zona7; }
-#zona8-diverse {
-    grid-area: zona8;
+#zona8-diverse { grid-area: zona8; }
+
+/* Secțiuni grid: efect neon, fundal distinct */
+#grid-pagina section {
+    background-color: var(--culoare-fundal-grid);
+    border: 1px solid var(--culoare-contur);
+    border-radius: 0.5rem;
+    box-shadow: 0 0 15px var(--culoare-neon), inset 0 0 8px rgba(80, 241, 250, 0.15);
+    padding: var(--padding-comun);
+    overflow: hidden;
 }
 
+/* Imagine prezentare responsive */
+#zona1-prezentare figure img {
+    width: 90%;
+    max-width: 50rem;
+    min-width: 12.5rem;
+    height: auto;
+    display: block;
+    margin: 0.9375rem auto;
+    border: 1px solid var(--culoare-accent);
+    border-radius: 0.125rem;
+}
+
+/* Tabel: spațiere între celule, caption jos */
+#zona2-tabel table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0.125rem;
+    margin-top: 0.625rem;
+    caption-side: bottom;
+}
+
+/* Caption tabel */
+#zona2-tabel caption {
+    padding: 0.625rem 0;
+    font-weight: bold;
+    color: var(--culoare-text-secondary);
+    text-align: center;
+}
+
+/* Celule tabel */
+#zona2-tabel th, #zona2-tabel td {
+    border: 1px solid var(--culoare-contur);
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+/* Antet tabel */
+#zona2-tabel thead {
+    background-color: var(--culoare-contur);
+    color: var(--culoare-fundal);
+}
+
+/* Rânduri pare: mov; impare: albastru */
+#zona2-tabel tbody tr:nth-child(even) { 
+    background-color: rgba(183, 145, 250, 0.15); 
+}
+
+#zona2-tabel tbody tr:nth-child(odd) { 
+    background-color: rgba(105, 179, 249, 0.15); 
+}
+
+/* Tranziție hover pe rânduri */
+#zona2-tabel tbody tr { 
+    transition: background-color 0.3s ease; 
+}
+
+#zona2-tabel tbody tr:hover { 
+    background-color: rgba(232, 135, 255, 0.3); 
+}
+
+/* Footer tabel */
+#zona2-tabel tfoot { 
+    font-style: italic; 
+    color: var(--culoare-text-secondary); 
+    background-color: var(--culoare-fundal-zone);
+}
+
+/* Container tabel cu scroll orizontal */
+.tabel-container {
+    overflow-x: auto;
+    width: 100%;
+}
+
+/* Placeholder generic */
+.placeholder {
+    padding: 1.25rem;
+    border: 1px dashed var(--culoare-contur);
+    color: var(--culoare-text-secondary);
+    font-style: italic;
+}
+
+/* Footer principal */
+footer {
+    background-color: var(--culoare-fundal-zone);
+    text-align: center;
+    margin-top: 2.5rem;
+    color: var(--culoare-text-secondary);
+}
+
+/* Icon static Font Awesome */
+.icon-static {
+    font-size: 3rem;
+    display: block;
+    text-align: center;
+    color: var(--culoare-accent);
+    margin-bottom: 0.625rem;
+}
+
+/* Icon animat Font Awesome */
+.icon-animat {
+    font-size: 2rem;
+    display: block;
+    text-align: center;
+    color: var(--culoare-highlight);
+    margin-bottom: 0.9375rem;
+}
+
+/* Linkuri video deasupra iframe-ului */
+.video-links {
+    display: flex;
+    justify-content: center;
+    gap: 0.625rem;
+    flex-wrap: wrap;
+    margin: 0.625rem 0;
+    font-size: 0.85em;
+}
+
+.video-links a {
+    color: var(--culoare-text);
+    text-decoration: none;
+    padding: 0.3125rem 0.625rem;
+    border: 1px solid var(--culoare-contur);
+    border-radius: 0.25rem;
+    transition: background 0.3s ease;
+}
+
+.video-links a:hover {
+    background: var(--culoare-accent);
+    color: var(--culoare-fundal);
+}
+
+/* Container iframe video YouTube */
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 35rem;
+    min-width: 17.5rem;
+    margin: 1.25rem auto;
+    border: 0.125rem solid var(--culoare-text);
+    background: var(--culoare-fundal);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-container iframe {
+    width: 100%;
+    max-width: 35rem;
+    height: 19.6875rem;
+    border: none;
+    display: block;
+}
+
+/* Buton "Înapoi sus" - poziționare fixă jos-dreapta */
+.back-to-top {
+    position: fixed;
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 3.125rem;
+    height: 3.125rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, var(--culoare-contur) 0%, var(--culoare-fundal-zone) 50%, var(--culoare-contur) 100%);
+    border: 0.125rem solid var(--culoare-contur);
+    border-radius: 0.625rem;
+    opacity: 0.6;
+    transition: opacity 0.3s ease, transform 0.5s ease;
+    text-decoration: none;
+    color: var(--culoare-text);
+    box-shadow: inset 0 0 10px rgba(80, 241, 250, 0.3);
+    z-index: 1000;
+}
+
+/* Buton devine opac la hover și se rotește */
+.back-to-top:hover {
+    opacity: 1;
+    transform: rotate(360deg);
+}
+
+/* Săgeata cu efect blur */
+.sageata {
+    font-size: 1.5rem;
+    font-weight: bold;
+    filter: blur(1px);
+    text-shadow: 
+        1px 1px 0 var(--culoare-text-secondary),
+        -1px -1px 0 var(--culoare-text-secondary),
+        1px -1px 0 var(--culoare-text-secondary),
+        -1px 1px 0 var(--culoare-text-secondary);
+    transition: filter 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Săgeata devine clară la hover */
+.back-to-top:hover .sageata {
+    filter: blur(0);
+    text-shadow: none;
+}
+
+/* Tooltip buton */
+.tooltip {
+    position: absolute;
+    bottom: 3.75rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--culoare-fundal-zone);
+    border: 1px solid var(--culoare-contur);
+    padding: 0.3125rem 0.625rem;
+    border-radius: 0.3125rem;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    color: var(--culoare-text);
+}
+
+/* Tooltip vizibil la hover */
+.back-to-top:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Linkuri în footer */
+footer address a { color: var(--culoare-text); text-decoration: underline; }
+footer address a:hover { color: var(--culoare-accent); }
+
+/* Container formulă MathML */
 .formula-container {
     margin: 1.25rem 0;
     padding: 1rem;
@@ -168,6 +360,7 @@ nav ul li:hover ul { display: block; }
     margin-bottom: 0.625rem;
 }
 
+/* Formula MathML */
 math {
     font-size: 1.2em;
     display: block;
@@ -179,22 +372,26 @@ math {
     font-family: 'Orbitron', monospace;
 }
 
+/* Variabile în formulă: italic, cyan */
 .math-var {
     color: var(--culoare-text);
     font-style: italic;
 }
 
+/* Constante în formulă: bold, bleu */
 .math-const {
     color: var(--culoare-highlight);
     font-weight: bold;
 }
 
+/* Indici: violet, mai mici */
 .math-sub {
     color: var(--culoare-accent);
     font-size: 0.85em;
     vertical-align: sub;
 }
 
+/* Descriere formulă */
 .formula-desc {
     font-size: 0.75em;
     color: var(--culoare-text-secondary);
@@ -207,6 +404,7 @@ math {
     font-weight: bold;
 }
 
+/* Secțiune linkuri resurse */
 .resurse-links {
     margin: 1rem 0;
     padding: 0.75rem;
@@ -238,213 +436,7 @@ math {
     color: var(--culoare-accent);
 }
 
-#grid-pagina section {
-    background-color: var(--culoare-fundal-grid);
-    border: 1px solid var(--culoare-contur);
-    border-radius: 0.5rem;
-    box-shadow: 0 0 15px var(--culoare-neon), inset 0 0 8px rgba(80, 241, 250, 0.15);
-    padding: var(--padding-comun);
-    overflow: hidden;
-}
-
-#zona1-prezentare figure img {
-    width: 90%;
-    max-width: 50rem;
-    min-width: 12.5rem;
-    height: auto;
-    display: block;
-    margin: 0.9375rem auto;
-    border: 1px solid var(--culoare-accent);
-    border-radius: 0.125rem;
-}
-
-#zona2-tabel table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0.125rem;
-    margin-top: 0.625rem;
-    caption-side: bottom;
-}
-
-#zona2-tabel caption {
-    padding: 0.625rem 0;
-    font-weight: bold;
-    color: var(--culoare-text-secondary);
-    text-align: center;
-}
-
-#zona2-tabel th, #zona2-tabel td {
-    border: 1px solid var(--culoare-contur);
-    padding: 0.5rem;
-    text-align: center;
-    font-size: 0.9em;
-}
-
-#zona2-tabel thead {
-    background-color: var(--culoare-contur);
-    color: var(--culoare-fundal);
-}
-
-#zona2-tabel tbody tr:nth-child(even) { 
-    background-color: rgba(183, 145, 250, 0.15); 
-}
-#zona2-tabel tbody tr:nth-child(odd) { 
-    background-color: rgba(105, 179, 249, 0.15); 
-}
-#zona2-tabel tbody tr { 
-    transition: background-color 0.3s ease; 
-}
-#zona2-tabel tbody tr:hover { 
-    background-color: rgba(232, 135, 255, 0.3); 
-}
-
-#zona2-tabel tfoot { 
-    font-style: italic; 
-    color: var(--culoare-text-secondary); 
-    background-color: var(--culoare-fundal-zone);
-}
-
-.placeholder {
-    padding: 20px;
-    border: 1px dashed var(--culoare-contur);
-    color: var(--culoare-text-secondary);
-    font-style: italic;
-}
-
-footer {
-    background-color: var(--culoare-fundal-zone);
-    text-align: center;
-    margin-top: 40px;
-    color: var(--culoare-text-secondary);
-}
-
-.icon-static {
-    font-size: 3rem;
-    display: block;
-    text-align: center;
-    color: var(--culoare-accent);
-    margin-bottom: 0.625rem;
-}
-
-.icon-animat {
-    font-size: 2rem;
-    display: block;
-    text-align: center;
-    color: var(--culoare-highlight);
-    margin-bottom: 0.9375rem;
-}
-
-.video-links {
-    display: flex;
-    justify-content: center;
-    gap: 0.625rem;
-    flex-wrap: wrap;
-    margin: 0.625rem 0;
-    font-size: 0.85em;
-}
-
-.video-links a {
-    color: var(--culoare-text);
-    text-decoration: none;
-    padding: 0.3125rem 0.625rem;
-    border: 1px solid var(--culoare-contur);
-    border-radius: 0.25rem;
-    transition: background 0.3s ease;
-}
-
-.video-links a:hover {
-    background: var(--culoare-accent);
-    color: var(--culoare-fundal);
-}
-
-.video-container {
-    position: relative;
-    width: 100%;
-    max-width: 35rem;
-    min-width: 17.5rem;
-    margin: 1.25rem auto;
-    border: 0.125rem solid var(--culoare-text);
-    background: var(--culoare-fundal);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.video-container iframe {
-    width: 100%;
-    max-width: 35rem;
-    height: 19.6875rem;
-    border: none;
-    display: block;
-}
-
-.back-to-top {
-    position: fixed;
-    bottom: 1.25rem;
-    right: 1.25rem;
-    width: 3.125rem;
-    height: 3.125rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(135deg, var(--culoare-contur) 0%, var(--culoare-fundal-zone) 50%, var(--culoare-contur) 100%);
-    border: 0.125rem solid var(--culoare-contur);
-    border-radius: 0.625rem;
-    opacity: 0.6;
-    transition: opacity 0.3s ease, transform 0.5s ease;
-    text-decoration: none;
-    color: var(--culoare-text);
-    box-shadow: inset 0 0 10px rgba(80, 241, 250, 0.3);
-    z-index: 1000;
-}
-
-.back-to-top:hover {
-    opacity: 1;
-    transform: rotate(360deg);
-}
-
-.sageata {
-    font-size: 1.5rem;
-    font-weight: bold;
-    filter: blur(1px);
-    text-shadow: 
-        1px 1px 0 var(--culoare-text-secondary),
-        -1px -1px 0 var(--culoare-text-secondary),
-        1px -1px 0 var(--culoare-text-secondary),
-        -1px 1px 0 var(--culoare-text-secondary);
-    transition: filter 0.3s ease, text-shadow 0.3s ease;
-}
-
-.back-to-top:hover .sageata {
-    filter: blur(0);
-    text-shadow: none;
-}
-
-.tooltip {
-    position: absolute;
-    bottom: 3.75rem;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--culoare-fundal-zone);
-    border: 1px solid var(--culoare-contur);
-    padding: 0.3125rem 0.625rem;
-    border-radius: 0.3125rem;
-    font-size: 0.8rem;
-    white-space: nowrap;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    color: var(--culoare-text);
-}
-
-.back-to-top:hover .tooltip {
-    opacity: 1;
-    visibility: visible;
-}
-
-footer address a { color: var(--culoare-text); text-decoration: underline; }
-footer address a:hover { color: var(--culoare-accent); }
-
+/* Ecran mediu: spațiere mai mică, grid 2 coloane */
 @media screen and (max-width: 1200px) {
     :root {
         --spatiere-pagina: 2.5rem;
@@ -472,6 +464,7 @@ footer address a:hover { color: var(--culoare-accent); }
     }
 }
 
+/* Ecran mic: coloane dispărute, animații oprite */
 @media screen and (max-width: 700px) {
     :root {
         --spatiere-pagina: 0.625rem;
@@ -504,8 +497,6 @@ footer address a:hover { color: var(--culoare-accent); }
     }
     
     header h1 { font-size: 1.2em; }
-    nav ul li { display: block; border-bottom: 1px solid var(--culoare-contur); }
-    nav ul li ul { position: static; width: 100%; }
     
     #zona1-prezentare figure img { width: 100%; max-width: none; min-width: auto; }
     
@@ -514,6 +505,7 @@ footer address a:hover { color: var(--culoare-accent); }
     }
 }
 
+/* Pentru utilizatori cu preferința motion-reduce */
 @media (prefers-reduced-motion: reduce) and (max-width: 700px) {
     * {
         animation: none !important;

@@ -1,0 +1,154 @@
+/* Print Stylesheet - BLACKBOX Security */
+
+/* Ascund elemente media și buton back-to-top */
+figure, picture, video, iframe, .video-container, .video-links, .back-to-top {
+    display: none !important;
+}
+
+/* Grid devine block la printare */
+#grid-pagina {
+    display: block !important;
+}
+
+/* Linkuri ca text normal */
+a {
+    color: #000 !important;
+    text-decoration: none !important;
+}
+
+/* Banner prima pagină: dreapta-sus, border negru dublu, jumătate lățime */
+header {
+    position: relative;
+}
+
+header::before {
+    content: "BLACKBOX Security";
+    position: absolute;
+    top: 1cm;
+    right: 1cm;
+    width: 50%;
+    border: 3px double #000;
+    padding: 0.5rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14pt;
+}
+
+/* Heading h1 centrat pe prima pagină (se afișează doar o dată) */
+h1 {
+    text-align: center;
+    font-size: 24pt;
+    color: #000 !important;
+    text-shadow: none !important;
+    page-break-after: avoid;
+}
+
+/* Meniu sub h1 ca listă neordonată verticală */
+nav ul {
+    display: block !important;
+    list-style: disc !important;
+    padding-left: 2rem !important;
+    margin: 1rem 0 !important;
+    background: none !important;
+    border: none !important;
+}
+
+nav ul li {
+    display: list-item !important;
+    border: none !important;
+    margin: 0.25rem 0;
+}
+
+nav ul li a {
+    font-size: 10pt;
+    padding: 0 !important;
+    background: none !important;
+}
+
+nav ul li ul {
+    display: block !important;
+    position: static !important;
+    min-width: auto !important;
+    transform: none !important;
+    list-style: circle !important;
+    padding-left: 1.5rem !important;
+    margin: 0 !important;
+    border: none !important;
+}
+
+nav ul li ul li {
+    border: none !important;
+}
+
+/* Page break după meniu, înainte de footer */
+nav {
+    page-break-after: always;
+    display: block;
+}
+
+footer {
+    page-break-before: always;
+}
+
+/* Watermark pe fiecare pagină */
+@page {
+    size: A4;
+    margin: 2cm;
+
+    @bottom-center {
+        content: "Visenica Andreea-Laura";
+        font-size: 18pt;
+        color: rgba(0, 0, 0, 0.3);
+        width: 60%;
+        height: 10%;
+        white-space: pre;
+    }
+}
+
+/* Pagini stânga/dreapta cu margini diferite */
+@page :left {
+    margin-left: 2cm;
+    margin-right: 1cm;
+}
+
+@page :right {
+    margin-right: 2cm;
+    margin-left: 1cm;
+}
+
+/* Ascund elemente neon și fundal */
+body {
+    background: #fff !important;
+    color: #000 !important;
+    font-family: 'Times New Roman', Times, serif !important;
+    padding: 0 !important;
+    background-image: none !important;
+}
+
+header, footer, #grid-pagina section {
+    background: #fff !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: #000 !important;
+}
+
+h1, h2, h3, h4 {
+    color: #000 !important;
+    text-shadow: none !important;
+}
+
+/* Tabel la printare */
+table {
+    border-collapse: collapse;
+    border: 1px solid #000;
+}
+
+th, td {
+    border: 1px solid #000;
+    color: #000;
+}
+
+/* Ascund iconițe, placeholdere, meter, details */
+.icon-static, .icon-animat, .placeholder, meter, details {
+    display: none !important;
+}

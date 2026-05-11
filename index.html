@@ -1,51 +1,102 @@
 <!DOCTYPE html>
+<!-- BLACKBOX Security - Pagina Principală -->
 <html lang="ro">
 <head>
+    <!-- Meta: setare caractere -->
     <meta charset="utf-8">
     
+    <!-- Titlu pagină -->
     <title>BLACKBOX - Sisteme de Securitate Hardware</title>
     
+    <!-- Meta: autor -->
     <meta name="author" content="Visenica Andreea-Laura">
+    <!-- Meta: viewport pentru responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta: descriere site -->
     <meta name="description" content="BLACKBOX este un magazin de hardware pentru securitate, oferind camere de supraveghere și sisteme de alarmă profesionale.">
+    <!-- Meta: cuvinte cheie -->
     <meta name="keywords" content="Blackbox, magazin, hardware, securitate, camere de supraveghere, sisteme de alarma, control acces, interfoane video, echipamente de retea, stocare date, accesorii pentru securitate, NVR, DVR, IP camera, sistem supraveghere, kit securitate">
     
+    <!-- Favicon: generat cu realfavicongenerator.net -->
     <link rel="apple-touch-icon" sizes="180x180" href="./resurse/imagini/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="96x96" href="./resurse/imagini/favicon/favicon-96x96.png">
     <link rel="shortcut icon" href="./resurse/imagini/favicon/favicon.ico">
 
+    <!-- Meta: culoare tile pentru Windows -->
     <meta name="msapplication-TileColor" content="#000000">
     <meta name="theme-color" content="#ffffff">
     
+    <!-- Font extern: Orbitron de la Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Iconuri Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- CSS reset + meniu + general -->
     <link rel="stylesheet" href="./resurse/css/reset.css">
+    <link rel="stylesheet" href="./resurse/css/meniu.css">
     <link rel="stylesheet" href="./resurse/css/general.css">
+    <link rel="stylesheet" href="./resurse/css/print.css" media="print">
 </head>
+
 <body>
+    <!-- ===== HEADER ===== -->
     <header id="top">
+        <!-- Titlu site -->
         <h1>BLACKBOX Security</h1>
+
+        <!-- Checkbox ascuns pentru hamburger menu pe mobil -->
+        <input type="checkbox" id="hamburger-checkbox">
+        <label for="hamburger-checkbox" class="hamburger-label"><i class="fa-solid fa-bars"></i></label>
+
+        <!-- ===== Navigare principală ===== -->
         <nav>
             <ul>
-                <li><a href="index.html">Acasă</a>
+                <!-- Acasă + submeniu cu linkuri ancoră -->
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Acasă</a>
                     <ul> 
-                        <li><a href="#zona1-prezentare">Prezentare</a></li>
-                        <li><a href="#zona2-tabel">Program Lucru</a></li>
-                        <li><a href="#zona8-diverse">Oferte</a></li>
-                        <li><a href="#zona3-calendar">Evenimente</a></li>
+                        <li><a href="#zona1-prezentare"><i class="fa-solid fa-arrow-right"></i> Prezentare</a></li>
+                        <li><a href="#zona2-tabel"><i class="fa-solid fa-arrow-right"></i> Program Lucru</a></li>
+                        <li><a href="#zona8-diverse"><i class="fa-solid fa-arrow-right"></i> Oferte</a></li>
+                        <li><a href="#zona3-calendar"><i class="fa-solid fa-arrow-right"></i> Evenimente</a></li>
                     </ul>
                 </li>
-                <li><a href="produse.html">Produse</a></li>
-                <li><a href="despre.html">Despre noi</a></li>
-                <li><a href="contact.html">Contact</a></li>
+
+                <!-- Produse + submeniu cu pagini -->
+                <li><a href="produse.html"><i class="fa-solid fa-microchip"></i> Produse</a>
+                    <ul>
+                        <li><a href="produse.html#camere"><i class="fa-solid fa-camera"></i> Camere</a></li>
+                        <li><a href="produse.html#stocare"><i class="fa-solid fa-hard-drive"></i> Stocare</a></li>
+                        <li><a href="produse.html#alarme"><i class="fa-solid fa-bell"></i> Alarme</a></li>
+                        <li><a href="produse.html#accesorii"><i class="fa-solid fa-plug"></i> Accesorii</a></li>
+                    </ul>
+                </li>
+
+                <!-- Despre noi -->
+                <li><a href="despre.html"><i class="fa-solid fa-circle-info"></i> Despre noi</a></li>
+
+                <!-- Contact -->
+                <li><a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+
+                <!-- Galerie + submeniu -->
+                <li><a href="#"><i class="fa-solid fa-images"></i> Galerie</a>
+                    <ul>
+                        <li><a href="galerie-statica.html"><i class="fa-solid fa-camera-retro"></i> Galerie statică</a></li>
+                        <li><a href="galerie-dinamica.html"><i class="fa-solid fa-video"></i> Galerie dinamică</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
+        <!-- ===== Sfârșit navigare ===== -->
     </header>
+    <!-- ===== Sfârșit HEADER ===== -->
 
+    <!-- ===== MAIN cu GRID ===== -->
     <main id="grid-pagina">
+
+        <!-- ZONA 1: Prezentare (Z-pattern) -->
         <section id="zona1-prezentare">
             <span class="icon-static"><i class="fa-solid fa-shield-halved"></i></span>
             <hgroup>
@@ -55,10 +106,12 @@
             
             <p>Bine ați venit la <b>BLACKBOX</b>. Într-o lume digitalizată, <b>monitorizare video</b> nu mai este opțională. <dfn>Securitatea</dfn> este procesul de protejare a bunurilor prin tehnologie. Oferim soluții <abbr title="Internet Protocol">IP</abbr> și sisteme <abbr title="Network Video Recorder">NVR</abbr> de calitate.</p>
             
+            <!-- Citat -->
             <blockquote cite="https://ro.wikipedia.org/wiki/Securitate">
                 "Securitatea fizică reprezintă prima barieră în protecția oricărei infrastructuri critice."
             </blockquote>
 
+            <!-- Imagine responsive cu picture -->
             <figure id="fig-principala">
                 <picture>
                     <source srcset="./resurse/imagini/camera-700.jpg" media="(max-width:700px)">
@@ -69,11 +122,13 @@
             </figure>
         </section>
 
+        <!-- ZONA 2: Tabel orar -->
         <section id="zona2-tabel">
             <h2>Orar și Disponibilitate Servicii</h2>
             <div class="tabel-container">
                 <table>
                     <caption>Programul de lucru și disponibilitatea echipei tehnice 2026</caption>
+                    <!-- Antet tabel -->
                     <thead>
                         <tr>
                             <th>Regim Zi</th>
@@ -83,6 +138,7 @@
                             <th>Stare</th>
                         </tr>
                     </thead>
+                    <!-- Corp tabel cu date -->
                     <tbody>
                         <tr>
                             <td>Luni</td>
@@ -129,6 +185,7 @@
                     <td colspan="4">Închis</td>
                         </tr>
                     </tbody>
+                    <!-- Footer tabel -->
                     <tfoot>
                         <tr>
                             <td colspan="5"><b>Notă:</b> Pentru intervenții în afara programului, apelați linia de urgență 24/7.</td>
@@ -138,6 +195,7 @@
             </div>
         </section>
 
+        <!-- ZONA 3: Calendar evenimente -->
         <section id="zona3-calendar">
             <h2>Calendar Evenimente</h2>
             <ol>
@@ -156,6 +214,7 @@
             </ol>
         </section>
 
+        <!-- ZONA 4: Anunțuri cu details/summary -->
         <section id="zona4-anunturi">
             <h2>Anunțuri</h2>
             <details>
@@ -174,25 +233,30 @@
             </details>
         </section>
 
+        <!-- ZONA 5: Utilizatori online -->
         <section id="zona5-utilizatori">
             <h2>Utilizatori Online</h2>
             <div class="placeholder">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</div>
         </section>
 
+        <!-- ZONA 6: Date utilizator și statistici -->
         <section id="zona6-utilizator-date">
             <h2>Date Utilizator și Statistici</h2>
             <div class="placeholder">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</div>
         </section>
 
+        <!-- ZONA 7: Date site și server -->
         <section id="zona7-server">
             <h2>Date Site și Server</h2>
             <div class="placeholder">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pariatur. Excepteur sint occaecat cupidatat non proident.</div>
         </section>
 
+        <!-- ZONA 8: Conținut divers -->
         <section id="zona8-diverse">
             <h2>Informații Suplimentare</h2>
             <p>BLACKBOX oferă sisteme de securitate hardware profesionale pentru locuințe și sedii comerciale. Oferim <b>camere de supraveghere</b>, <b>sisteme de alarmă</b>, <b>control acces</b> și <b>interfoane video</b>.</p>
             
+            <!-- Formulă MathML -->
             <div class="formula-container">
                 <h3>Formula de stocare video</h3>
                 <math>
@@ -220,21 +284,19 @@
                     <span class="formula-variable">D</span> = Zile
                 </p>
             </div>
-            
+
+            <!-- Linkuri resurse -->
             <div class="resurse-links">
                 <h3>Link-uri utile</h3>
                 <ul>
                     <li>Partener oficial: <a href="https://www.hikvision.com/ro_ro" target="_blank">Hikvision România</a></li>
-                    <li>Documentație tehnică: <a href="https://www.security-standards-example.org/docs/implementation-guide-2026#chapter5">https://www.security-standards-example.org/<wbr>docs/<wbr>implementation-guide-2026#chapter5</a></li>
-                    <li>Descarcă manual: <a href="resurse/manual.pdf" download="Ghid_Complet_Securitate.pdf">Descarcă PDF</a></li>
-                    <li>Galerie imagini: 
-                        <a href="resurse/imagini/camera-mare.jpg">
-                            <img src="resurse/imagini/camera-mic.jpg" alt="Cameră" style="width: 3rem;">
-                        </a>
-                    </li>
+                    <li>Documentație: <a href="https://www.security-standards-example.org/docs/implementation-guide-2026#chapter5">https://www.security-standards-example.org/<wbr>docs/<wbr>implementation-guide-2026#chapter5</a></li>
+                    <li><a href="resurse/manual.pdf" download="Ghid_Complet_Securitate.pdf">Descarcă PDF</a></li>
+                    <li><a href="resurse/imagini/camera-mare.jpg"><img src="resurse/imagini/camera-mic.jpg" alt="Cameră" style="width: 3rem;"></a></li>
                 </ul>
             </div>
             
+            <!-- Linkuri video + iframe YouTube -->
             <div class="video-links">
                 <a href="https://www.youtube.com/embed/DCTPLS0O7XQ" target="ifr-video">Instalare Sistem 6 Camere IP & NVR</a> |  
                 <a href="https://www.youtube.com/embed/RCvv9LzS79E" target="ifr-video">Configurare DVR/NVR Hikvision pe Mobil</a> |
@@ -244,12 +306,14 @@
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/ReYWBlAcCH0" name="ifr-video" title="YouTube security tutorials" allowfullscreen></iframe>
             </div>
             
+            <!-- Secțiune imbricată: Promoții -->
             <section id="promotii">
                 <h3>Promoții și Oferte</h3>
                 <article>
                     <h4>Kit Supraveghere Weekend</h4>
                     <p><b>BLACKBOX</b> oferă reduceri de <s>10%</s> <ins>20%</ins> pentru sistemele 4K cumpărate sâmbăta.</p>
                     
+                    <!-- Meter cu valoare mică -->
                     <p>Stoc campanie (Critic): 
                         <meter value="15" min="0" max="100" low="30" high="80" optimum="90"></meter> 
                         <span>15% rămas - Stoc scăzut!</span>
@@ -258,6 +322,7 @@
 
                 <article>
                     <h4>Satisfacție Clienți</h4>
+                    <!-- Meter cu valoare mare -->
                     <p>Rata de feedback pozitiv: 
                         <meter value="95" min="0" max="100" low="30" high="80" optimum="95"></meter> 
                         <span>95% - Excelent!</span>
@@ -265,6 +330,7 @@
                 </article>
             </section>
 
+            <!-- Secțiune imbricată: Categorii Hardware -->
             <section id="categorii">
                 <h3>Categorii Hardware</h3>
                 <section>
@@ -288,10 +354,17 @@
                 </aside>
             </section>
         </section>
-    </main>
+        <!-- ===== Sfârșit ZONA 8 ===== -->
 
+    </main>
+    <!-- ===== Sfârșit MAIN ===== -->
+
+    <!-- ===== FOOTER ===== -->
     <footer>
+        <!-- Icon animat -->
         <span class="icon-animat"><i class="fa-solid fa-circle-notch fa-spin"></i></span>
+
+        <!-- Informații contact -->
         <address>
             <strong>Contact BLACKBOX</strong><br>
             Email: <a href="mailto:office@blackbox-security.ro">office@blackbox-security.ro</a><br>
@@ -299,10 +372,16 @@
             Locație: <a href="https://goo.gl/maps/N9S2pX68A6H2" target="_blank">Str. Academiei 14,<br>București, România</a><br>
             Chat: <a href="https://wa.me/40722000000">WhatsApp Direct</a>
         </address>
+
+        <!-- Buton "Înapoi sus" cu tooltip -->
         <a href="#top" class="back-to-top"><span class="sageata">&#8593;</span><span class="tooltip">Înapoi la începutul paginii</span></a>
+
+        <!-- Copyright -->
         <p>
             <small>Copyright &copy; 2026 BLACKBOX Security. Creat la <time datetime="2026-03-15">15 martie 2026</time></small>
         </p>
     </footer>
+    <!-- ===== Sfârșit FOOTER ===== -->
+
 </body>
 </html>
